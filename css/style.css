@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.body-btn {
+    background-color: #00575e;
+    color: #fff;
+    margin: auto;
+    padding: 10px 20px;
+    position: relative;
+    will-change: top, left;
+    left: 45vw;
+    top: 45vh;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: top 0.3s, left 0.3s;
+    transition: background-color 0.3s, left 0.3s;
+}
+
+.body-btn:hover {
+    background-color: #fff;
+}
+
+.floating-form {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000;
+}
+
+.modal-backdrop {
+    z-index: 1;
+}
+
+.floating-form .btn-floating {
+    background-color: #00575e;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: -210px;
+    background-color: #00575e;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 10;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-floating:hover .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    margin-left: -5px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent #00575e;
+}
+
+.btn-floating:hover .tooltip {
+    display: block;
+    opacity: 1;
+}
+
+.floating-form .btn-floating:hover {
+    background-color: #00454b;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.floating-form .btn-floating i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.floating-form .modal-content {
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.floating-form .modal-content h1 {
+    font-size: 1.75rem;
+    color: #00575e;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.floating-form .modal-content h2 {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.floating-form .modal-content .form-label,
+.input-group-text {
+    font-weight: 700;
+    color: #00575e;
+}
+
+.floating-form .modal-content .form-label svg {
+    margin-right: 0.5rem;
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5;
+    padding: 1px;
+}
+
+.floating-form .modal-content .form-control,
+.input-group-text {
+    border: 1px solid #00575e;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.floating-form .modal-content .btn-primary {
+    background-color: #00575e;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.floating-form .modal-content .btn-primary:hover {
+    background-color: #00454b;
+}
+
+.floating-form .modal-content .btn-secondary {
+    background-color: transparent !important;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    padding: 0.75rem;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #00575e;
+}
+
+.floating-form .modal-content .btn-secondary svg {
+    width: 35px;
+    height: 35px;
+}
+
+.floating-form .modal-content .btn:hover {
+    color: black;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .floating-form {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .floating-form .modal-dialog {
+        margin: 0 10px;
+    }
+
+    .floating-form .modal-content {
+        padding: 1rem;
+    }
+
+    .floating-form .modal-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .floating-form .modal-content h2 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .row {
+        flex-direction: column;
+    }
+}
